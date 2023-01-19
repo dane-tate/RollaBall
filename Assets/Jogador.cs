@@ -6,11 +6,13 @@ public class Jogador : MonoBehaviour
 {
 
     public float velocidade;
+    private int contador = 0;
 
      private Rigidbody rb;
     // Start is called before the first frame update
 void Start()
 {
+    contador = 0;
     //Fisica é adicionada ao componente Rigidbody
     //Guardar a referencia do objeto Rigidbody (se este axistir)
     rb = GetComponent<Rigidbody> ();
@@ -30,4 +32,16 @@ void FixedUpdate ()
     //movimento * velocidade
     rb. AddForce (movimento * velocidade);
     }
+
+
+private void OnTriggerEnter (Collider other)
+{
+    contador = contador + 1;
+    //se o GameObject for um Coletável if (other.gameObject. CompareTag("Coletavel"))
+    {
+    //então desativa
+    other.gameObject.SetActive(false);
+    }
+}
+
 }
