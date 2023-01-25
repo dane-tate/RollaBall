@@ -351,6 +351,7 @@
 "Assets/Camara.cs"
 "Assets/Coletavel.cs"
 "Assets/Jogador.cs"
+"Assets/menu.cs"
 -langversion:9.0
 
 /deterministic
